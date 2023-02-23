@@ -18,7 +18,6 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Target found: " + collision.name);
         if (!target)
             target = collision.transform;
     }
