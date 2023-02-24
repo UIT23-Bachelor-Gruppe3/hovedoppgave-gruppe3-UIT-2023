@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a302ef47-dcfd-43c8-b5bb-2a783dfbc942" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bachelor Oppgave Grp 3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bachelor Oppgave Grp 3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +88,7 @@
       <updated>1676985923587</updated>
       <workItem from="1676985926645" duration="620000" />
       <workItem from="1677067633729" duration="240000" />
+      <workItem from="1677249360473" duration="1788000" />
     </task>
     <servers />
   </component>
