@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!target)
+        if (!target && collision.TryGetComponent(typeof(PlayerBehaviour), out Component component))
             target = collision.transform;
     }
 }
