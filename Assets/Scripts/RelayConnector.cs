@@ -12,6 +12,7 @@ using QFSW.QC;
 
 public class RelayConnector : MonoBehaviour
 {
+    [SerializeField] private Transform enemyPrefab;
 
     private async void Start()
     {
@@ -26,6 +27,13 @@ public class RelayConnector : MonoBehaviour
         //CreateRelay(); //hardcoded for testing without an interface or console. run on host (serverside) 
         //JoinRelay(code); //run on client with the code that is provided by the host
 
+    }
+
+    [Command]
+    private void spawnEnemy()
+    {
+        Transform enemyTransform = Instantiate(enemyPrefab);
+        enemyTransform.GetComponent<NetworkObject>().Spawn(true);
     }
 
     [Command]
