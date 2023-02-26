@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerBehaviour : NetworkBehaviour
 {
+    [SerializeField]
+    private Rigidbody2D rG;
     private float horizontalInput;
     private float verticalInput;
     // Start is called before the first frame update
@@ -22,7 +24,7 @@ public class PlayerBehaviour : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 movement = new Vector2(horizontalInput, verticalInput) * (4 * Time.fixedDeltaTime);
-        transform.position += (Vector3)movement;
+        Vector2 force = new Vector2(horizontalInput, verticalInput) * (4 * Time.fixedDeltaTime);
+        rG.AddForce(force);
     }
 }

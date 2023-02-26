@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Transform target;
-    float speed = 1f;
+    [SerializeField]
+    private Rigidbody2D rG;
+    private Transform target;
+    private float speed = 1f;
 
     private void FixedUpdate()
     {
         if (target)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            // transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            Vector2 force = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            rG.AddForce(force);
         }
     }
 
