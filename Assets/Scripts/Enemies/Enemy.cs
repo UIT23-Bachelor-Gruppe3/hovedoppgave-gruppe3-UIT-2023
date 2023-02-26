@@ -7,8 +7,7 @@ public class Enemy : MonoBehaviour
     Transform target;
     float speed = 1f;
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         if (target)
         {
