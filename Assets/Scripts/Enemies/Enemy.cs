@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody2D rG;
-    private Transform target;
-    private float speed = 1f;
+    Transform target;
+    float speed = 1f;
+    Rigidbody2D rb2d;
+
+    private void Start()
+    {
+        rb2d = GetComponent<Rigidbody2D>();
+    }
 
     private void FixedUpdate()
     {
         if (target)
         {
-            // transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-            Vector2 force = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-            rG.AddForce(force);
+            // transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
+            rb2d.MovePosition(Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime));
         }
     }
 
