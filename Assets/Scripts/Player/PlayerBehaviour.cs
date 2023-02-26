@@ -17,7 +17,7 @@ public class PlayerBehaviour : NetworkBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        Vector2 movement = new Vector2(horizontalInput, verticalInput) * (4 * Time.fixedDeltaTime);
+        Vector2 movement = new Vector2(horizontalInput, verticalInput) * (4 * Time.deltaTime);
 
         transform.position += (Vector3)movement;
     }
