@@ -8,12 +8,24 @@ using Unity.Services.Relay.Models;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
+using QFSW.QC;
 
 public class RelayConnector : MonoBehaviour
 {
 
+    //Singleton pattern: https://www.youtube.com/watch?v=2pCkInvkwZ0&t=125s
+    public static RelayConnector instance;
+
     private async void Start()
     {
+        if(instance != null && instance != this)
+        {
+            Destroy(this); //make sure only one singleton exist at any time
+            Debug.Log("RelayConnector was destoyed, because another Singleton was created");
+        }
+
+        instance = this;
+
         await UnityServices.InitializeAsync();
 
         AuthenticationService.Instance.SignedIn += () =>
@@ -27,7 +39,8 @@ public class RelayConnector : MonoBehaviour
 
     }
 
-    private async void CreateRelay()
+    [Command]
+    public async void CreateRelay() //preferrably should be private
     {
         try
         {
@@ -52,6 +65,8 @@ public class RelayConnector : MonoBehaviour
         }
 
     }
+
+    [Command]
     private async void JoinRelay(string joinCode)
     {
         try

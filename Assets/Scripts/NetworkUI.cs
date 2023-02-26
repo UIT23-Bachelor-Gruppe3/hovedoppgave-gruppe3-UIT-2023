@@ -10,15 +10,18 @@ public class NetworkUI : NetworkBehaviour
     [SerializeField] private Button hostButton;
     [SerializeField] private Button clientButton;
     [SerializeField] private TextMeshProUGUI playersCountText;
-    public RelayConnector relayConnector; //
-    private NetworkVariable<int> playersNum = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone);
+    //public RelayConnector connection; //
+    private NetworkVariable<int> playersNum = new(0, NetworkVariableReadPermission.Everyone);
 
     // Start is called before the first frame update
     private void Awake()
     {
+        //connection = GetComponent<RelayConnector>();
+
         hostButton.onClick.AddListener(() =>
         {
-            relayConnector.CreateRelay();
+            //connection.CreateRelay();
+            RelayConnector.instance.CreateRelay();
         });
 
         clientButton.onClick.AddListener(() =>
@@ -30,9 +33,11 @@ public class NetworkUI : NetworkBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!IsServer) return;
+        playersCountText.text = "Players: " + playersNum.Value.ToString();
+        
+        if (!IsServer) return; //count only clients connected
 
         playersNum.Value = NetworkManager.Singleton.ConnectedClients.Count;
-        playersCountText.text = "Players: " + playersNum.Value.ToString();
+        
     }
 }
