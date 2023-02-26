@@ -6,19 +6,12 @@ public class Enemy : MonoBehaviour
 {
     Transform target;
     float speed = 1f;
-    Rigidbody2D rb2d;
-
-    private void Start()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-    }
 
     private void FixedUpdate()
     {
         if (target)
         {
-            // transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
-            rb2d.MovePosition(Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime));
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
         }
     }
 
