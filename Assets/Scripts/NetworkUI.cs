@@ -25,8 +25,6 @@ public class NetworkUI : NetworkBehaviour
         {
             //connection.CreateRelay();
             RelayConnector.instance.CreateRelay();
-            
-            Debug.Log("Host clicked " + joinCode);
             TestClientRpc();
 
         });
@@ -35,11 +33,7 @@ public class NetworkUI : NetworkBehaviour
         {
             //relayConnector.JoinRelay(joinCode);
             //RelayConnector.instance.JoinRelay(joinCode);
-            Debug.Log("Client clicked " + joinCode);
             TestServerRpc(joinCode);
-
-
-
         });
     }
 
@@ -58,7 +52,7 @@ public class NetworkUI : NetworkBehaviour
     private void TestClientRpc() //can of course also receive all value types
     {
         joinCode = RelayConnector.instance.joinCode;
-        Debug.Log("ClientRpc " + RelayConnector.instance.joinCode);
+        Debug.Log("ClientRpc " + joinCode);
         
         //Debug.Log("TestClientRpc" + OwnerClientId);
     }
