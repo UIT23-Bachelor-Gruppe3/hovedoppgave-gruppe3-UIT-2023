@@ -1,18 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Lobby : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private RelayConnector RelayConnector { get; set; }
+
+    private void Awake()
     {
-        
+        RelayConnector = FindObjectOfType<RelayConnector>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void createLobby()
     {
-        
+        Debug.Log("RelayConnector: " + RelayConnector); // Add this line
+        RelayConnector.CreateRelay();
+        SceneManager.LoadScene("Game");
+    }
+
+
+    public void joinLobby()
+    {
+    }
+
+    public void back()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

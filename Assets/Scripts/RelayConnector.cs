@@ -27,7 +27,7 @@ public class RelayConnector : MonoBehaviour
 
     }
 
-    private async void CreateRelay()
+    public async void CreateRelay()
     {
         try
         {
