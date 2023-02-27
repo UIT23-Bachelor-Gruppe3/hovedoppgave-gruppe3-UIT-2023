@@ -11,29 +11,21 @@ public class NetworkUI : NetworkBehaviour
     [SerializeField] private Button hostButton;
     [SerializeField] private Button clientButton;
     [SerializeField] private TextMeshProUGUI playersCountText;
-    //public RelayConnector connection; //
     private NetworkVariable<int> playersNum = new(0, NetworkVariableReadPermission.Everyone);
-    private string joinCode = "Nada";
 
 
     // Start is called before the first frame update
     private void Awake()
     {
-        //connection = GetComponent<RelayConnector>();
-
         hostButton.onClick.AddListener(() =>
         {
-            //connection.CreateRelay();
-            RelayConnector.instance.CreateRelay();
-            TestClientRpc();
+            TestClientRpc("Hello from the server!");
 
         });
 
         clientButton.onClick.AddListener(() =>
         {
-            //relayConnector.JoinRelay(joinCode);
-            //RelayConnector.instance.JoinRelay(joinCode);
-            TestServerRpc(joinCode);
+            TestServerRpc("Hello from the client!");
         });
     }
 
@@ -49,18 +41,17 @@ public class NetworkUI : NetworkBehaviour
     }
 
     [ClientRpc]
-    private void TestClientRpc() //can of course also receive all value types
+    private void TestClientRpc(FixedString32Bytes msg) //can of course also receive all value types
     {
-        joinCode = RelayConnector.instance.joinCode;
-        Debug.Log("ClientRpc " + joinCode);
         
-        //Debug.Log("TestClientRpc" + OwnerClientId);
+        Debug.Log(msg);
+        
     }
 
-    [ServerRpc]
-    private void TestServerRpc(string code)
+    [ServerRpc(RequireOwnership = false)]
+    private void TestServerRpc(FixedString32Bytes msg)
     {
-        Debug.Log("ServerRpc " + code);
-        RelayConnector.instance.JoinRelay(code);
+        if (!IsOwner) return;
+            Debug.Log(msg);
     }
 }
