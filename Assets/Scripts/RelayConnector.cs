@@ -15,6 +15,7 @@ public class RelayConnector : MonoBehaviour
 
     //Singleton pattern: https://www.youtube.com/watch?v=2pCkInvkwZ0&t=125s
     public static RelayConnector instance;
+    public string joinCode;
 
     private async void Start()
     {
@@ -46,7 +47,7 @@ public class RelayConnector : MonoBehaviour
         {
             Allocation allocation = await RelayService.Instance.CreateAllocationAsync(3);
 
-            string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+            joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
 
             Debug.Log("; JoinCode: " + joinCode);
@@ -67,7 +68,7 @@ public class RelayConnector : MonoBehaviour
     }
 
     [Command]
-    private async void JoinRelay(string joinCode)
+    public async void JoinRelay(string joinCode)
     {
         try
         {

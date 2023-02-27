@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class NetworkUI : NetworkBehaviour
     [SerializeField] private TextMeshProUGUI playersCountText;
     //public RelayConnector connection; //
     private NetworkVariable<int> playersNum = new(0, NetworkVariableReadPermission.Everyone);
+    private string joinCode = "Nada";
+
 
     // Start is called before the first frame update
     private void Awake()
@@ -22,11 +25,21 @@ public class NetworkUI : NetworkBehaviour
         {
             //connection.CreateRelay();
             RelayConnector.instance.CreateRelay();
+            
+            Debug.Log("Host clicked " + joinCode);
+            TestClientRpc();
+
         });
 
         clientButton.onClick.AddListener(() =>
         {
             //relayConnector.JoinRelay(joinCode);
+            //RelayConnector.instance.JoinRelay(joinCode);
+            Debug.Log("Client clicked " + joinCode);
+            TestServerRpc(joinCode);
+
+
+
         });
     }
 
@@ -39,5 +52,21 @@ public class NetworkUI : NetworkBehaviour
 
         playersNum.Value = NetworkManager.Singleton.ConnectedClients.Count;
         
+    }
+
+    [ClientRpc]
+    private void TestClientRpc() //can of course also receive all value types
+    {
+        joinCode = RelayConnector.instance.joinCode;
+        Debug.Log("ClientRpc " + RelayConnector.instance.joinCode);
+        
+        //Debug.Log("TestClientRpc" + OwnerClientId);
+    }
+
+    [ServerRpc]
+    private void TestServerRpc(string code)
+    {
+        Debug.Log("ServerRpc " + code);
+        RelayConnector.instance.JoinRelay(code);
     }
 }
