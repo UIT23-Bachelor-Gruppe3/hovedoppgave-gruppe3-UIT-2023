@@ -52,7 +52,7 @@ public class RelayConnector : MonoBehaviour
         }
 
     }
-    private async void JoinRelay(string joinCode)
+    public async void JoinRelay(string joinCode)
     {
         try
         {
