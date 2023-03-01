@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerBehaviour : NetworkBehaviour
 {
+    private float horizontalInput;
+    private float verticalInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +16,14 @@ public class PlayerBehaviour : NetworkBehaviour
     void Update()
     {
         if (!IsOwner) return;
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+    }
 
-        Vector2 movement = new Vector2(horizontalInput, verticalInput) * (4 * Time.deltaTime);
-
+    private void FixedUpdate()
+    {
+        Vector2 movement = new Vector2(horizontalInput, verticalInput) * (4 * Time.fixedDeltaTime);
         transform.position += (Vector3)movement;
+
     }
 }

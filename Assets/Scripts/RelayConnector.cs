@@ -37,7 +37,7 @@ public class RelayConnector : MonoBehaviour
     }
 
     [Command]
-    private async void CreateRelay() //preferrably should be private
+    private async void CreateRelay()
     {
         try
         {
