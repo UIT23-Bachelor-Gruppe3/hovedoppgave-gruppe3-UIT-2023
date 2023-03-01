@@ -2,55 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f899fa07-fcf5-4af9-95c1-4d18e1187967" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/Gate.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/Gate.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/GateOpen.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/GateOpen.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/PortalSpin.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/PortalSpin.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/Robot.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/Robot.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/RobotSpawn.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/RobotSpawn.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/Spawner.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Animations/Spawner.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/DemoScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/DemoScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Materials/Wall.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Materials/Wall.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Prefabs/Death.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Prefabs/Death.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Prefabs/Robot.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Prefabs/Robot.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/QFSW.QC.Demo.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/QFSW.QC.Demo.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Scripts/Gate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Scripts/Gate.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Scripts/Robot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Scripts/Robot.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Scripts/RobotCollector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Scripts/RobotCollector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Scripts/RobotSpawner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Scripts/RobotSpawner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Textures/Robot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Textures/Robot.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Textures/Spawner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Textures/Spawner.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Textures/Tile#1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Textures/Tile#1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Textures/Tile#2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/QFSW/Quantum Console/Source/Demo Scene/Textures/Tile#2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.hovedoppgave-gruppe3-UIT-2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.hovedoppgave-gruppe3-UIT-2023/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LobbyPre.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LobbyPre.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/Lobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/Lobby.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/PreLobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/PreLobby.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RelayConnector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RelayConnector.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +22,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4014a86cbefb4944b2b6c9211c8fd2fc159a00/38/1105a8dd/Application.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4014a86cbefb4944b2b6c9211c8fd2fc159a00/ca/36b2e398/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/PreLobby.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.services.relay@1.0.5/Runtime/SDK/RelayService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -70,22 +35,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\carlo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\carlo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\carlo\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\carlo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\carlo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\carlo\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/Bachelor Oppgave Grp 3.exe" />
@@ -141,6 +106,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677613729085</updated>
       <workItem from="1677613732408" duration="8735000" />
+      <workItem from="1677665707127" duration="7010000" />
     </task>
     <servers />
   </component>
@@ -151,5 +117,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Menu/Lobby.cs</url>
+          <line>18</line>
+          <properties documentPath="C:\development\gamedev\bachelor\hovedoppgave-gruppe3-UIT-2023\Assets\Scripts\Menu\Lobby.cs" initialLine="16" containingFunctionPresentation="method 'back'">
+            <startOffsets>
+              <option value="436" />
+            </startOffsets>
+            <endOffsets>
+              <option value="437" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

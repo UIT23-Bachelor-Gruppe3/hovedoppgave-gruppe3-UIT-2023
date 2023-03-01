@@ -5,21 +5,15 @@ using UnityEngine.Serialization;
 
 public class PreLobby : MonoBehaviour
 {
-    private static RelayConnector relayConnector;
+    public RelayConnector relayConnector;
     [SerializeField] TextMeshProUGUI lobbyCodeFromJoin;
 
-    public void Start()
-    {
-        relayConnector = RelayConnector.instance;
-    }
 
     public async void createLobby()
     {
-        Debug.Log("create lobby gogo");
         await relayConnector.CreateRelay();
-        // Debug.Log("hoho");
-        // SceneManager.LoadScene("Lobby");
-        // lobbyCodeFromCreate.text = relayConnector.joinCode;
+        Debug.Log(relayConnector.joinCode);
+        SceneManager.LoadScene("Lobby");
     }
 
     public void joinLobby()

@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
@@ -12,21 +13,31 @@ using QFSW.QC;
 public class RelayConnector : MonoBehaviour
 {
     //Singleton pattern: https://www.youtube.com/watch?v=2pCkInvkwZ0&t=125s
-    public static RelayConnector instance;
-    // public string joinCode;
+    // public static RelayConnector instance;
+    public string joinCode;
 
-
-    private async void Start()
+    private void Awake()
     {
-        if (instance != null && instance != this)
+        Debug.Log("Awake in RelayConnector");
+        int instanceCount = FindObjectsOfType(typeof(RelayConnector)).Length;
+        if (instanceCount > 1)
         {
-            Destroy(this); //make sure only one singleton exist at any time
-            Debug.Log("RelayConnector was destroyed, because another Singleton was created");
+            Debug.Log("RelayConnector is already instantiated");
+            gameObject.SetActive(false); // prevents anything from using this before destroy
+            Destroy(this);
         }
+        else
+        {
+            DontDestroyOnLoad(this);
+            // instance = this;
+            initialize();
+        }
+    }
 
-        instance = this;
 
-        await UnityServices.InitializeAsync();
+    private async void initialize()
+    {
+        await UnityServices.InitializeAsync(); // Unity was complaining about this line was missing 
 
         AuthenticationService.Instance.SignedIn += () =>
         {
@@ -38,11 +49,14 @@ public class RelayConnector : MonoBehaviour
     [Command]
     public async Task CreateRelay() //preferably should be private
     {
+        Debug.Log("kjører CreateRelay");
         try
         {
+            UnityServices.InitializeAsync();
+
             Allocation allocation = await RelayService.Instance.CreateAllocationAsync(3);
 
-            string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+            joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
             Debug.Log("; JoinCode: " + joinCode);
 
@@ -57,6 +71,7 @@ public class RelayConnector : MonoBehaviour
             Debug.Log(e);
         }
     }
+
 
     [Command]
     public async void JoinRelay(string joinCode)

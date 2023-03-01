@@ -12,4 +12,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit(0);
     }
+
+    public void settings()
+    {
+        Debug.Log("going to settings");
+    }
 }
