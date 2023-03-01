@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
 using UnityEngine;
@@ -12,8 +11,21 @@ using QFSW.QC;
 
 public class RelayConnector : MonoBehaviour
 {
+    //Singleton pattern: https://www.youtube.com/watch?v=2pCkInvkwZ0&t=125s
+    public static RelayConnector instance;
+    // public string joinCode;
+
+
     private async void Start()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(this); //make sure only one singleton exist at any time
+            Debug.Log("RelayConnector was destroyed, because another Singleton was created");
+        }
+
+        instance = this;
+
         await UnityServices.InitializeAsync();
 
         AuthenticationService.Instance.SignedIn += () =>
@@ -21,14 +33,10 @@ public class RelayConnector : MonoBehaviour
             Debug.Log("Signed In; player ID: " + AuthenticationService.Instance.PlayerId);
         };
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
-
-        //CreateRelay(); //hardcoded for testing without an interface or console. run on host (serverside) 
-        //JoinRelay(code); //run on client with the code that is provided by the host
-
     }
 
     [Command]
-    private async void CreateRelay()
+    public async Task CreateRelay() //preferably should be private
     {
         try
         {
@@ -36,26 +44,22 @@ public class RelayConnector : MonoBehaviour
 
             string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
-
             Debug.Log("; JoinCode: " + joinCode);
 
             RelayServerData relayServerData = new RelayServerData(allocation, "dtls");
+
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
-
             NetworkManager.Singleton.StartHost();
-
-
         }
         catch (RelayServiceException e)
         {
             Debug.Log(e);
         }
-
     }
 
     [Command]
-    private async void JoinRelay(string joinCode)
+    public async void JoinRelay(string joinCode)
     {
         try
         {
