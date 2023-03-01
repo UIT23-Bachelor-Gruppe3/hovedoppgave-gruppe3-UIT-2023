@@ -51,7 +51,7 @@ public class NetworkUI : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     private void TestServerRpc(FixedString32Bytes msg)
     {
-        if (!IsOwner) return;
+        //if (!IsOwner) return;
             Debug.Log(msg);
     }
 }

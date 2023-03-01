@@ -26,15 +26,17 @@ public class PlayerSettings : NetworkBehaviour
         switch ((int)OwnerClientId)
         {
             case 1:
-                Debug.Log("Case 1");
+                Debug.Log("Black");
                 spriteRenderer.color = Color.black;
             break;
 
             case 2:
+                Debug.Log("Green");
                 spriteRenderer.color = Color.green;
             break;
 
             case 3:
+                Debug.Log("Blue");
                 spriteRenderer.color = Color.blue;
             break;
         }
