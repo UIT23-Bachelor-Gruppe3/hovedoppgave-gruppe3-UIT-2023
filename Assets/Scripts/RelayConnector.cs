@@ -15,7 +15,7 @@ public class RelayConnector : MonoBehaviour
 
     //Singleton pattern: https://www.youtube.com/watch?v=2pCkInvkwZ0&t=125s
     public static RelayConnector instance;
-
+    
     private async void Start()
     {
         if(instance != null && instance != this)
