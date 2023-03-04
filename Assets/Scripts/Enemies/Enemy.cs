@@ -5,19 +5,26 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Transform target;
-    float speed = 1f;
+    private readonly float speed = 1f;
 
     private void FixedUpdate()
     {
         if (target)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
+            Vector2 moveDirection = (target.transform.position - transform.position).normalized;
+            transform.Translate(speed * Time.fixedDeltaTime * moveDirection);
+            //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!target && collision.TryGetComponent(typeof(PlayerBehaviour), out Component component))
             target = collision.transform;
     }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (!target && TryGetComponent(typeof(PlayerBehaviour), out Component _))
+    //        target = collision.transform;
+    //}
 }
