@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 7760049597110513818}
   - component: {fileID: -2542170495117644301}
   - component: {fileID: 1296883272098633521}
+  - component: {fileID: 1226006489096485308}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -433,6 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b98ec11841a6246831d68dd07b01a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStats: {fileID: 11400000, guid: a6992c2df045650408bb3ab3b8bdf298, type: 2}
 --- !u!114 &-5344691580744704556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,8 +492,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000044703484, y: -0.05160907}
-  m_Size: {x: 0.25481543, y: 0.91692203}
+  m_Offset: {x: -0.0056420118, y: -0.0647735}
+  m_Size: {x: 0.34132478, y: 1.0410439}
   m_Direction: 0
 --- !u!50 &-2542170495117644301
 Rigidbody2D:
@@ -526,3 +528,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d7c879794dfda4687da0e400131852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1226006489096485308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419003853843874476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e831a7e31be3f4242aff0882306ef428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlayerDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3419003853843874476}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  HP: {fileID: 11400000, guid: d7997286ce73bd2449ce18f7aff21852, type: 2}
+  ResetHP: 1
+  StartingHP:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 7cf6d7f20a6c94e468245839d788d5c1, type: 2}
+  enemy: {fileID: 4129416394867447205, guid: 46a228878be1c7d4ca858649563bf82e, type: 3}

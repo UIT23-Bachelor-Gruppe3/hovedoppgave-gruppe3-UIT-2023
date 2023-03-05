@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class PlayerBehaviour : NetworkBehaviour
 {
+    public ScriptableStats playerStats; //referene to Scriptable Object
     private float horizontalInput;
     private float verticalInput;
     // Start is called before the first frame update
     void Start()
     {
+        //GetComponent<SpriteRenderer>().color = playerStats.playerColor;
     }
 
     // Update is called once per frame
@@ -22,7 +24,7 @@ public class PlayerBehaviour : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 movement = new Vector2(horizontalInput, verticalInput) * (4 * Time.fixedDeltaTime);
+        Vector2 movement = new Vector2(horizontalInput, verticalInput) * (playerStats.moveSpeed * Time.fixedDeltaTime);
         transform.position += (Vector3)movement;
 
     }

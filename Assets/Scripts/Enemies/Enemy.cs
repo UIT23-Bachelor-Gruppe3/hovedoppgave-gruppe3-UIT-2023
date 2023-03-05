@@ -21,10 +21,4 @@ public class Enemy : MonoBehaviour
     {
             target = collision.transform;
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (!target && TryGetComponent(typeof(PlayerBehaviour), out Component _))
-    //        target = collision.transform;
-    //}
 }
