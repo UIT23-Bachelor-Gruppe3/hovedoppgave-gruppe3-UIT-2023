@@ -37,7 +37,7 @@ public class RelayConnector : MonoBehaviour
 
     private async void initialize()
     {
-        await UnityServices.InitializeAsync(); // Unity was complaining about this line was missing 
+        await UnityServices.InitializeAsync();
 
         AuthenticationService.Instance.SignedIn += () =>
         {
@@ -52,15 +52,13 @@ public class RelayConnector : MonoBehaviour
         Debug.Log("kjører CreateRelay");
         try
         {
-           await UnityServices.InitializeAsync();
+            await UnityServices.InitializeAsync();
 
             allocation = await RelayService.Instance.CreateAllocationAsync(3);
 
             joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
             Debug.Log("; JoinCode: " + joinCode);
-
-
         }
         catch (RelayServiceException e)
         {

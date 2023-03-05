@@ -1,13 +1,11 @@
-using System;
 using TMPro;
-using Unity.Netcode;
-using Unity.Netcode.Transports.UTP;
-using Unity.Networking.Transport.Relay;
+using Unity.Services.Lobbies;
+using Unity.Services.Lobbies.Models;
 using Unity.Services.Relay.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Lobby : MonoBehaviour
+public class LobbyRoom : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI lobbyCode;
     RelayConnector relayConnector;
@@ -21,6 +19,16 @@ public class Lobby : MonoBehaviour
         lobbyCode.text = relayConnector.joinCode;
     }
 
+    private async void init_Lobby(string name, bool isPrivate)
+    {
+        string lobbyName = name;
+        int maxPlayers = 4;
+        CreateLobbyOptions options = new CreateLobbyOptions();
+        options.IsPrivate = isPrivate;
+
+        Lobby lobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, maxPlayers, options);
+    }
+
     public void back()
     {
         SceneManager.LoadScene("PreLobby");
@@ -28,8 +36,6 @@ public class Lobby : MonoBehaviour
 
     public void begin()
     {
-
-
         SceneManager.LoadScene("Game");
     }
 }

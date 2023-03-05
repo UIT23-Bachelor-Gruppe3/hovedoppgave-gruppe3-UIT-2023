@@ -1,13 +1,21 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class PreLobby : MonoBehaviour
 {
     public RelayConnector relayConnector;
     [SerializeField] TextMeshProUGUI lobbyCodeFromJoin;
+    [SerializeField] TextMeshProUGUI lobbyName;
 
+    private void Start()
+    {
+        // LobbyNames randomName = gameObject.GetComponent<LobbyNames>();
+        // Debug.Log(randomName.getRandomName());
+        // lobbyName.text = new LobbyNames().getRandomName();
+        // lobbyName.text = "apenes";
+    }
 
     public async void createLobby()
     {
