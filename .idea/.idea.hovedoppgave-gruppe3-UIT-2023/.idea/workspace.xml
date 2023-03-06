@@ -3,18 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f899fa07-fcf5-4af9-95c1-4d18e1187967" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.hovedoppgave-gruppe3-UIT-2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.hovedoppgave-gruppe3-UIT-2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PreLobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PreLobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/Lobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/LobbyRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/Lobby.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/LobbyRoom.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/LobbyRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/LobbyRoom.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/PreLobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/PreLobby.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RelayConnector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RelayConnector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/samplesveneold.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/samplesveneold.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +16,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4014a86cbefb4944b2b6c9211c8fd2fc159a00/38/1105a8dd/Application.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4014a86cbefb4944b2b6c9211c8fd2fc159a00/ca/36b2e398/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CreateLobbyButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InitGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/PreLobby.cs" root0="FORCE_HIGHLIGHTING" />
@@ -41,22 +33,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "CodeLensConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\carlo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\carlo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\carlo\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\carlo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\carlo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\carlo\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/Bachelor Oppgave Grp 3.exe" />
@@ -114,7 +107,8 @@
       <workItem from="1677613732408" duration="8735000" />
       <workItem from="1677665707127" duration="10979000" />
       <workItem from="1677774543707" duration="3227000" />
-      <workItem from="1677928810332" duration="2925000" />
+      <workItem from="1677928810332" duration="3520000" />
+      <workItem from="1678017181490" duration="7676000" />
     </task>
     <servers />
   </component>
@@ -132,14 +126,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Menu/LobbyRoom.cs</url>
           <line>20</line>
-          <properties documentPath="C:\development\gamedev\bachelor\hovedoppgave-gruppe3-UIT-2023\Assets\Scripts\Menu\Lobby.cs" initialLine="16" containingFunctionPresentation="method 'back'">
-            <startOffsets>
-              <option value="896" />
-            </startOffsets>
-            <endOffsets>
-              <option value="897" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\development\gamedev\bachelor\hovedoppgave-gruppe3-UIT-2023\Assets\Scripts\Menu\Lobby.cs" initialLine="16" containingFunctionPresentation="method 'back'" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
