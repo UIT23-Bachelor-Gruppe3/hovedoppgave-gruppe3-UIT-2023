@@ -28,12 +28,12 @@ public class RelayConnector : MonoBehaviour
         else
         {
             instance = this;
-            initialize();
+            Initialize();
         }
     }
 
 
-    private async void initialize()
+    private async void Initialize()
     {
         if(instance != null && instance != this)
         {
@@ -66,6 +66,12 @@ public class RelayConnector : MonoBehaviour
             joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
             Debug.Log("; JoinCode: " + joinCode);
+
+            RelayServerData relayServerData = new(allocation, "dtls");
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+
+
+            NetworkManager.Singleton.StartHost();
         }
         catch (RelayServiceException e)
         {
@@ -74,7 +80,7 @@ public class RelayConnector : MonoBehaviour
     }
 
     [Command]
-    private async void JoinRelay(string joinCode)
+    private async void JoinRelay(string joinCodeIn)
     {
         try
         {

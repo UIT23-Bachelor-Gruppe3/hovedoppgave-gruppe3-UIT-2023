@@ -566,3 +566,4 @@ MonoBehaviour:
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 7cf6d7f20a6c94e468245839d788d5c1, type: 2}
   enemy: {fileID: 4129416394867447205, guid: 46a228878be1c7d4ca858649563bf82e, type: 3}
+  damage: {fileID: 975166155566513762, guid: 46a228878be1c7d4ca858649563bf82e, type: 3}
