@@ -3,6 +3,7 @@ using Unity.Services.Core;
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LobbyRoom : MonoBehaviour
@@ -18,6 +19,7 @@ public class LobbyRoom : MonoBehaviour
 
     private void Start()
     {
+        RelayConnector relayConnector = RelayConnector.Instance;
         Button createLobbyButton = createLobbyButtonGO.GetComponent<Button>();
         createLobbyButton.onClick.AddListener(createLobby);
     }
@@ -25,6 +27,11 @@ public class LobbyRoom : MonoBehaviour
     private async void initMe()
     {
         await UnityServices.InitializeAsync();
+    }
+
+    public void startGameWithRelayTemporary()
+    {
+        SceneManager.LoadScene("Game");
     }
 
     private async void createLobby()
