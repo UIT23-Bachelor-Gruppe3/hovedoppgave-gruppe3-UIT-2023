@@ -13,7 +13,6 @@ using QFSW.QC;
 public class RelayConnector : MonoBehaviour
 {
     //Singleton pattern: https://www.youtube.com/watch?v=2pCkInvkwZ0&t=125s
-    // public static RelayConnector instance;
     public string joinCode;
     public Allocation allocation;
     public static RelayConnector instance;
