@@ -434,7 +434,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b98ec11841a6246831d68dd07b01a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: a6992c2df045650408bb3ab3b8bdf298, type: 2}
+  speed: {fileID: 11400000, guid: b8cfb2c8ff3d4fc4b9a359574d25c5c8, type: 2}
+  playerSpeed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: b8cfb2c8ff3d4fc4b9a359574d25c5c8, type: 2}
 --- !u!114 &-5344691580744704556
 MonoBehaviour:
   m_ObjectHideFlags: 0

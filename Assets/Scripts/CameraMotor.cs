@@ -36,7 +36,6 @@ public class CameraMotor : MonoBehaviour
 
         //check if we're inside the bounds of the x axis
         float deltaY = lookat.position.y - transform.position.y;
-        Debug.Log(transform.position.y);
 
         if (deltaY > boundY || deltaY < -boundX)
         {

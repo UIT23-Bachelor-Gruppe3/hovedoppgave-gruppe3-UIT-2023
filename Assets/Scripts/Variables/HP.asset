@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HP
   m_EditorClassIdentifier: 
   DeveloperDescription: the players current HP
-  Value: -50
+  Value: 314

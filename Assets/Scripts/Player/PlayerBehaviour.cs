@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using Variables;
 
 public class PlayerBehaviour : NetworkBehaviour
 {
-    public ScriptableStats playerStats; //referene to Scriptable Object
+    [SerializeField] FloatVariable speed;
+    public FloatReference playerSpeed;
     private float horizontalInput;
     private float verticalInput;
     // Start is called before the first frame update
     void Start()
     {
-        //GetComponent<SpriteRenderer>().color = playerStats.playerColor;
+        speed.SetValue(playerSpeed);
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class PlayerBehaviour : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 movement = new Vector2(horizontalInput, verticalInput) * (playerStats.moveSpeed * Time.fixedDeltaTime);
+        Vector2 movement = new Vector2(horizontalInput, verticalInput) * (playerSpeed * Time.fixedDeltaTime);
         transform.position += (Vector3)movement;
 
     }

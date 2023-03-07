@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d02f5b20ad65964bbc24e9bb9090b07, type: 3}
-  m_Name: MageStats
+  m_Script: {fileID: 11500000, guid: 818bd411efebf7549b244ad9d013648d, type: 3}
+  m_Name: PlayerSpeed
   m_EditorClassIdentifier: 
-  name: Mage
-  health: 120
-  moveSpeed: 5
-  playerColor: {r: 0.10793416, g: 0.6415094, b: 0, a: 1}
+  DeveloperDescription: "The current speed the player possess\t\t"
+  Value: 5
