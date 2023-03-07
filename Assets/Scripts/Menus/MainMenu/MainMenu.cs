@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void begin()
     {
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene("PreLobby");
     }
 
     public void exit()
