@@ -22,11 +22,13 @@ public class RelayConnector : MonoBehaviour
         if (instance != null && instance != this)
         {
             // Object is a duplicate and will delete it self
+            Debug.Log("RelayConnector already initialized");
             gameObject.SetActive(false); // prevents anything from using this before destroy
             Destroy(this);
         }
         else
         {
+            Debug.Log("RelayConnector initialized.");
             instance = this;
             initialize();
         }

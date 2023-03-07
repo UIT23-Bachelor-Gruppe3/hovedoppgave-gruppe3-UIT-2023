@@ -1262,8 +1262,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Lobby, Assembly-CSharp
+      - m_Target: {fileID: 885476626}
+        m_TargetAssemblyTypeName: PreLobby, Assembly-CSharp
         m_MethodName: back
         m_Mode: 1
         m_Arguments:
