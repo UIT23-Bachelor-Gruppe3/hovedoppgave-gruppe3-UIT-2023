@@ -25,7 +25,7 @@ public class RelayConnector : MonoBehaviour
         {
             Debug.Log("creating RelayConnector for the first time");
             _instance = this;
-            signInToRelay();
+            SignInToRelay();
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -36,34 +36,9 @@ public class RelayConnector : MonoBehaviour
     }
 
 
-    private static async void signInToRelay()
+    private static async void SignInToRelay()
     {
-        if (instance != null && instance != this)
-        {
-            // Object is a duplicate and will delete it self
-            gameObject.SetActive(false); // prevents anything from using this before destroy
-            Destroy(this);
-        }
-        else
-        {
-            instance = this;
-            Initialize();
-        }
-    }
-
-
-    private async void Initialize()
-    {
-        if(instance != null && instance != this)
-        {
-            Destroy(this); //make sure only one singleton exist at any time
-            Debug.Log("RelayConnector was destoyed, because another Singleton was created");
-        }
-
-        instance = this;
-
         await UnityServices.InitializeAsync();
-
         AuthenticationService.Instance.SignedIn += () =>
         {
             Debug.Log("Signed In; player ID: " + AuthenticationService.Instance.PlayerId);
