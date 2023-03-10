@@ -5,10 +5,10 @@ using System.Collections;
 
 public class SimpleUnitHealth : MonoBehaviour
 {
-    public UnityEvent onPlayerDeath;
-    public FloatVariable HP;
-    public bool ResetHP;
-    public FloatReference StartingHP;
+    [SerializeField] private UnityEvent onPlayerDeath;
+    [SerializeField] private FloatVariable HP;
+    [SerializeField] private bool ResetHP;
+    [SerializeField] private FloatReference StartingHP;
     [SerializeField] GameObject enemy;
     [SerializeField] DamageDealer damage;
     private float timer = 0;
