@@ -439,6 +439,7 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: b8cfb2c8ff3d4fc4b9a359574d25c5c8, type: 2}
+  playerCamera: {fileID: 262987622415783787, guid: dbb1e3aaf06cfd84c85d73a17ff03342, type: 3}
 --- !u!114 &-5344691580744704556
 MonoBehaviour:
   m_ObjectHideFlags: 0

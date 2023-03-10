@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerSpeed
   m_EditorClassIdentifier: 
   DeveloperDescription: "The current speed the player possess\t\t"
-  Value: 6.5
+  Value: 3
