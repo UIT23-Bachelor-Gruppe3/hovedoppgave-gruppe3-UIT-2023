@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 818bd411efebf7549b244ad9d013648d, type: 3}
-  m_Name: LightDamage
+  m_Name: PlayerMaxHP
   m_EditorClassIdentifier: 
-  DeveloperDescription: "damage dealt by weak enemies \nand primitive shapes"
-  Value: 10
+  DeveloperDescription: max hp that the player can have
+  Value: 100

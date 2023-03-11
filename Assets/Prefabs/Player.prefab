@@ -434,12 +434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b98ec11841a6246831d68dd07b01a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {fileID: 11400000, guid: b8cfb2c8ff3d4fc4b9a359574d25c5c8, type: 2}
   playerSpeed:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: b8cfb2c8ff3d4fc4b9a359574d25c5c8, type: 2}
-  playerCamera: {fileID: 262987622415783787, guid: dbb1e3aaf06cfd84c85d73a17ff03342, type: 3}
 --- !u!114 &-5344691580744704556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,11 +558,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
   HP: {fileID: 11400000, guid: d7997286ce73bd2449ce18f7aff21852, type: 2}
+  lightDamageTaken: {fileID: 11400000, guid: baec012dc7222564aa9e75b204215672, type: 2}
   ResetHP: 1
   StartingHP:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 7cf6d7f20a6c94e468245839d788d5c1, type: 2}
-  enemy: {fileID: 4129416394867447205, guid: 46a228878be1c7d4ca858649563bf82e, type: 3}
-  damage: {fileID: 975166155566513762, guid: 46a228878be1c7d4ca858649563bf82e, type: 3}
