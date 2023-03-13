@@ -455,15 +455,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3419003853843874476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edb640971a35d3d40a3fa2018575d34c, type: 3}
+  m_Script: {fileID: 11500000, guid: 80b98ec11841a6246831d68dd07b01a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 3419003853843874482}
-  playerName: {fileID: 1036707641}
-  colors:
-  - {r: 0.019238472, g: 1, b: 0, a: 1}
-  - {r: 0, g: 0.13995695, b: 1, a: 1}
-  - {r: 1, g: 0.9870857, b: 0, a: 1}
 --- !u!70 &7760049597110513818
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

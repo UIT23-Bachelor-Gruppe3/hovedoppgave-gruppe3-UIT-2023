@@ -1,7 +1,4 @@
-using System;
 using System.Threading.Tasks;
-using Unity.Services.Core;
-using Unity.Services.Authentication;
 using UnityEngine;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
@@ -12,52 +9,19 @@ using QFSW.QC;
 
 public class RelayConnector : MonoBehaviour
 {
-    //Singleton pattern: https://www.youtube.com/watch?v=2pCkInvkwZ0&t=125s
-    public string joinCode;
+
+    private string joinCode;
     public Allocation allocation;
-    public static RelayConnector instance;
-
-    private void Start()
-    {
-        if (instance != null && instance != this)
-        {
-            // Object is a duplicate and will delete it self
-            Debug.Log("RelayConnector already initialized");
-            gameObject.SetActive(false); // prevents anything from using this before destroy
-            Destroy(this);
-        }
-        else
-        {
-            Debug.Log("RelayConnector initialized.");
-            instance = this;
-            initialize();
-        }
-    }
-
-
-    private async void initialize()
-    {
-        await UnityServices.InitializeAsync();
-
-        AuthenticationService.Instance.SignedIn += () =>
-        {
-            Debug.Log("Signed In; player ID: " + AuthenticationService.Instance.PlayerId);
-        };
-        await AuthenticationService.Instance.SignInAnonymouslyAsync();
-    }
+    [SerializeField] RelayManager relayManager;
 
     [Command]
-    public async Task CreateRelay() //preferably should be private
+    public async Task CreateRelay()
     {
         Debug.Log("kjører CreateRelay");
         try
         {
-            await UnityServices.InitializeAsync();
-
             allocation = await RelayService.Instance.CreateAllocationAsync(3);
-
             joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-
             Debug.Log("; JoinCode: " + joinCode);
         }
         catch (RelayServiceException e)
