@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class LobbyMenu : MonoBehaviour
 {
-
-
     [SerializeField] GameObject beginButtonGO;
     [SerializeField] GameObject backButtonGO;
     [SerializeField] TextMeshProUGUI lobbyName;
@@ -16,7 +14,6 @@ public class LobbyMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI p3Name;
     [SerializeField] TextMeshProUGUI p4Name;
     [SerializeField] LobbySO lobbySO;
-    /*    [SerializeField] LobbyManager lobbyManager;*/
 
     void Start()
     {

@@ -1410,7 +1410,7 @@ MonoBehaviour:
   playerName: {fileID: 880669344}
   createLobbyButtonGO: {fileID: 2018768469}
   joinLobbyButtonGO: {fileID: 385258177}
-  lobbySO: {fileID: 11400000, guid: 4ddc8b5fdbf8d2d448f2795da5737ca8, type: 2}
+  lobbySO: {fileID: 11400000, guid: 593ae021595146e42b282bdf84bc73b7, type: 2}
 --- !u!1 &900831872
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class StartRelay : MonoBehaviour
 {
-    [SerializeField] LobbySO lobbySO;
+    [SerializeField] RelaySO relaySO;
 
     private void Start()
     {
-        lobbySO.StartHost();
+        relaySO.StartHost();
     }
 }

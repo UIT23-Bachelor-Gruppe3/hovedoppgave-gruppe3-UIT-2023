@@ -12,36 +12,23 @@ using Unity.Services.Relay.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public struct RelayHostData
-{
-    public string JoinCode;
-    public string IPv4Address;
-    public ushort Port;
-    public Guid AllocationID;
-    public byte[] AllocationIDBytes;
-    public byte[] ConnectionData;
-    public byte[] Key;
-}
 
 [CreateAssetMenu]
 public class LobbySO : ScriptableObject
-
 {
     public Lobby lobby;
-    public string lobbyCreatorID;
-
-    // fra gamle RelayConnector
-    private string joinCode;
-    public Allocation allocation;
+    [SerializeField] RelaySO relaySO;
 
 
     private async Task initAsyncIfNeeded()
     {
         // Initialize async and sign in if not allready completed
-        if (!UnityServices.InitializeAsync().IsCompletedSuccessfully) { await UnityServices.InitializeAsync(); }
+        if (!UnityServices.InitializeAsync().IsCompletedSuccessfully)
+        {
+            await UnityServices.InitializeAsync();
+            Debug.Log("Initialize Unity Async");
+        }
     }
-
-
 
     public async void CreateLobbyAsync(string lobbyName, string playerName)
     {
@@ -50,8 +37,8 @@ public class LobbySO : ScriptableObject
 
         {
             await initAsyncIfNeeded();
-            if (!AuthenticationService.Instance.IsSignedIn) { await SignIn(); }
-            await CreateRelay();
+            if (!AuthenticationService.Instance.IsSignedIn) { await relaySO.SignIn(); }
+            await relaySO.CreateRelay();
 
             // set options for lobby
             int maxPlayers = 4;
@@ -72,29 +59,12 @@ public class LobbySO : ScriptableObject
 
             // Load next scene
             SceneManager.LoadScene("Lobby");
+
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
             throw;
-        }
-    }
-    private async Task SignIn()
-    {
-        Debug.Log("Starter SignIn");
-        try
-        {
-            AuthenticationService.Instance.SignedIn += () =>
-            {
-                Debug.Log("Signed In; player ID: " + AuthenticationService.Instance.PlayerId);
-            };
-            await AuthenticationService.Instance.SignInAnonymouslyAsync();
-            /*relayManager.isInitialized = true;*/
-            Debug.Log("RelayConnector initialized.");
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e);
         }
     }
 
@@ -111,48 +81,10 @@ public class LobbySO : ScriptableObject
             SceneManager.LoadScene("Lobby");
 
         }
-        catch (LobbyServiceException e)
+        catch (Exception e)
         {
-            Debug.Log(e);
+            Console.WriteLine(e);
+            throw;
         }
-    }
-
-
-    public async Task CreateRelay()
-    {
-        Debug.Log("kjører CreateRelay");
-        try
-        {
-            await initAsyncIfNeeded();
-            allocation = await RelayService.Instance.CreateAllocationAsync(3); // Reserving space for 4 players
-            joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-            Debug.Log("; JoinCode: " + joinCode);
-
-        }
-        catch (RelayServiceException e)
-        {
-            Debug.Log(e);
-        }
-    }
-
-    public void StartHost()
-    {
-        //relayConnector = FindObjectOfType<RelayConnector>();
-        //allocation = relayConnector.allocation;
-        try
-        {
-            if (allocation != null)
-            {
-                RelayServerData relayServerData = new RelayServerData(allocation, "dtls");
-                NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
-                NetworkManager.Singleton.StartHost();
-            }
-            else
-            {
-                // denne fyrer at the moment...
-                Debug.Log("allocation was null...");
-            }
-        }
-        catch (Exception e) { Debug.Log(e); }
     }
 }

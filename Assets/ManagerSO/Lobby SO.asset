@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679288dbd58f9b34cbb29f30cdb3fa25, type: 3}
   m_Name: Lobby SO
   m_EditorClassIdentifier: 
+  relaySO: {fileID: 11400000, guid: 1880efd81d5c03f43af7d331c030fbcf, type: 2}
