@@ -23,7 +23,7 @@ public class PlayerBehaviour : NetworkBehaviour
 
     private void LateUpdate()
     {
-        if(IsLocalPlayer)
+        if (IsLocalPlayer)
         {
             //Vector3 pos = transform.position;
             //pos.z = -10;
@@ -69,7 +69,7 @@ public class PlayerBehaviour : NetworkBehaviour
     void Update()
     {
         HandleMovement();
-        
+
     }
 
     //void FixedUpdate()
@@ -80,7 +80,7 @@ public class PlayerBehaviour : NetworkBehaviour
     private void HandleInteractions()
     {
         if (!IsLocalPlayer) return;
-        
+
         Vector2 inputVector = new Vector2(horizontalInput, verticalInput).normalized;
         Vector2 moveDir = new(inputVector.x, inputVector.y);
 
@@ -89,8 +89,8 @@ public class PlayerBehaviour : NetworkBehaviour
 
         float interactDistance = 0f;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDir, interactDistance);
-        
-        if(hit.transform.TryGetComponent(out Enemy en))
+
+        if (hit.transform.TryGetComponent(out Enemy en))
             Debug.Log("Hit Something: " + en.tag);
 
 
@@ -102,7 +102,6 @@ public class PlayerBehaviour : NetworkBehaviour
 
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-    }
 
         Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized * (playerSpeed.Value * Time.deltaTime);
         transform.position += (Vector3)movement;
