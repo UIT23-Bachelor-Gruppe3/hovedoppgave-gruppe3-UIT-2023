@@ -50,7 +50,7 @@ public class PlayerBehaviour : NetworkBehaviour
             //check if we're inside the bounds of the x axis
             float deltaY = transform.position.y - mainCamera.transform.position.y;
 
-            if (deltaY > boundY || deltaY < -boundX)
+            if (deltaY > boundY || deltaY < -boundY)
             {
                 if (mainCamera.transform.position.y < transform.position.y)
                 {
@@ -72,10 +72,10 @@ public class PlayerBehaviour : NetworkBehaviour
         
     }
 
-    void FixedUpdate()
-    {
-        HandleInteractions();
-    }
+    //void FixedUpdate()
+    //{
+    //    HandleInteractions();
+    //}
 
     private void HandleInteractions()
     {
