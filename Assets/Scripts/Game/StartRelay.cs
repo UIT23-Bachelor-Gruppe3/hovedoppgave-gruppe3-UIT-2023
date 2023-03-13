@@ -8,6 +8,6 @@ public class StartRelay : MonoBehaviour
 
     private void Start()
     {
-        lobbySO.CreateRelay();
+        lobbySO.StartHost();
     }
 }

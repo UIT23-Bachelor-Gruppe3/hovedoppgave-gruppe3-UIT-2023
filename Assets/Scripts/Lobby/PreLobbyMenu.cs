@@ -18,8 +18,13 @@ public class PreLobbyMenu : MonoBehaviour
         Button createLobbyButton = createLobbyButtonGO.GetComponent<Button>();
         Button joinLobbyButton = joinLobbyButtonGO.GetComponent<Button>();
 
-        // Create lobby on begin-button press
-        createLobbyButton.onClick.AddListener(() => lobbySO.CreateLobbyAsync(lobbyNameInput.text, playerName.text));
+        // Create lobby and relay on begin-button press
+        createLobbyButton.onClick.AddListener(() =>
+        {
+            lobbySO.CreateLobbyAsync(lobbyNameInput.text, playerName.text);
+        }
+
+        );
         joinLobbyButton.onClick.AddListener(() => lobbySO.JoinLobbyAsync(lobbyCodeInput.text));
     }
 

@@ -1,5 +1,8 @@
 using System;
 using System.Threading.Tasks;
+using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
+using Unity.Networking.Transport.Relay;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Lobbies;
@@ -8,6 +11,17 @@ using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+public struct RelayHostData
+{
+    public string JoinCode;
+    public string IPv4Address;
+    public ushort Port;
+    public Guid AllocationID;
+    public byte[] AllocationIDBytes;
+    public byte[] ConnectionData;
+    public byte[] Key;
+}
 
 [CreateAssetMenu]
 public class LobbySO : ScriptableObject
@@ -21,22 +35,28 @@ public class LobbySO : ScriptableObject
     public Allocation allocation;
 
 
+    private async Task initAsyncIfNeeded()
+    {
+        // Initialize async and sign in if not allready completed
+        if (!UnityServices.InitializeAsync().IsCompletedSuccessfully) { await UnityServices.InitializeAsync(); }
+    }
+
+
+
     public async void CreateLobbyAsync(string lobbyName, string playerName)
     {
+        Debug.Log("Starter CreateLobbyAsync");
         try
 
         {
-            // Initialize async and sign in if not allready completed
-            if (!UnityServices.InitializeAsync().IsCompletedSuccessfully) { await UnityServices.InitializeAsync(); }
+            await initAsyncIfNeeded();
             if (!AuthenticationService.Instance.IsSignedIn) { await SignIn(); }
+            await CreateRelay();
 
             // set options for lobby
             int maxPlayers = 4;
             CreateLobbyOptions options = new CreateLobbyOptions();
             options.IsPrivate = true;
-
-            //lobbyCreatorID = options.Player.AllocationId;
-            lobbyCreatorID = "ape";
 
 
             // Create lobby
@@ -61,6 +81,7 @@ public class LobbySO : ScriptableObject
     }
     private async Task SignIn()
     {
+        Debug.Log("Starter SignIn");
         try
         {
             AuthenticationService.Instance.SignedIn += () =>
@@ -79,8 +100,10 @@ public class LobbySO : ScriptableObject
 
     public async void JoinLobbyAsync(string lobbyCode)
     {
+        Debug.Log("Starter JoinLobbyAsync");
         try
         {
+            await initAsyncIfNeeded();
             await LobbyService.Instance.JoinLobbyByCodeAsync(lobbyCode);
             Debug.Log("Join lobby by code");
 
@@ -95,14 +118,16 @@ public class LobbySO : ScriptableObject
     }
 
 
-    public async void CreateRelay()
+    public async Task CreateRelay()
     {
         Debug.Log("kjører CreateRelay");
         try
         {
-            allocation = await RelayService.Instance.CreateAllocationAsync(3);
+            await initAsyncIfNeeded();
+            allocation = await RelayService.Instance.CreateAllocationAsync(3); // Reserving space for 4 players
             joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
             Debug.Log("; JoinCode: " + joinCode);
+
         }
         catch (RelayServiceException e)
         {
@@ -110,6 +135,24 @@ public class LobbySO : ScriptableObject
         }
     }
 
-
-
+    public void StartHost()
+    {
+        //relayConnector = FindObjectOfType<RelayConnector>();
+        //allocation = relayConnector.allocation;
+        try
+        {
+            if (allocation != null)
+            {
+                RelayServerData relayServerData = new RelayServerData(allocation, "dtls");
+                NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+                NetworkManager.Singleton.StartHost();
+            }
+            else
+            {
+                // denne fyrer at the moment...
+                Debug.Log("allocation was null...");
+            }
+        }
+        catch (Exception e) { Debug.Log(e); }
+    }
 }
